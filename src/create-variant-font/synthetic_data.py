@@ -53,12 +53,12 @@ def render_text(draw, text, fonts, font_size, image_width, start_x, start_y, lin
     return y + padding_bottom
 
 
-def main(fonts_dir, text_file_path, output_image_path, image_width=2400, image_height=400, font_size=50, background_color="white",  padding_left=20, padding_right=20, padding_top=20, padding_bottom=20):
+def main(fonts_dir, text_file_path, output_image_path, image_width=2400, image_height=350, font_size=50, background_color="white",  padding_left=20, padding_right=20, padding_top=20, padding_bottom=20):
     fonts = load_fonts(fonts_dir)
     text = read_text(text_file_path)
     image = create_image(image_width, image_height, background_color)
     draw = ImageDraw.Draw(image)
-    line_spacing = font_size + 3
+    line_spacing = font_size + 2
     final_y_position = render_text(draw, text, fonts, font_size, image_width, 0, 20,
                                    line_spacing, padding_left, padding_right, padding_top, padding_bottom)
 
@@ -74,5 +74,5 @@ def main(fonts_dir, text_file_path, output_image_path, image_width=2400, image_h
 if __name__ == "__main__":
     fonts_dir = "fonts"
     text_file_path = "data/txt/test.txt"
-    output_image_path = "data/synt_img/derge_kangyur.png"
+    output_image_path = "data/synt_img/derge_kangyur_1.png"
     main(fonts_dir, text_file_path, output_image_path)

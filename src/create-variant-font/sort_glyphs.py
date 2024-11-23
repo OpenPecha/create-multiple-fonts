@@ -15,7 +15,7 @@ def group_files_by_glyph(input_dir):
 
 
 def sort_and_organize_files(input_dir, output_dir, glyph_variants):
-    for glyph_name, files in glyph_variants.items():
+    for files in glyph_variants.items():
         sorted_files = sorted(files, key=lambda f: int(f.split("_")[1]))
         for n, file in enumerate(sorted_files, start=1):
             variant_folder = os.path.join(output_dir, f"variant_{n}")
