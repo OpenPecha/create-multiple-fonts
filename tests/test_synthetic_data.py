@@ -9,8 +9,8 @@ def fonts_dir(tmp_path):
     font_dir = tmp_path / "fonts"
     font_dir.mkdir()
 
-    shutil.copy("../fonts/derge_var_1.ttf", font_dir)
-    shutil.copy("../fonts/derge_var_2.ttf", font_dir)
+    shutil.copy("fonts/derge_var_1.ttf", font_dir)
+    shutil.copy("fonts/derge_var_2.ttf", font_dir)
 
     return font_dir
 
