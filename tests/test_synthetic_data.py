@@ -18,7 +18,8 @@ def fonts_dir(tmp_path):
 @pytest.fixture
 def text_file(tmp_path):
     text_file = tmp_path / "test.txt"
-    text_file.write_text("This is a test text.\nWith multiple lines.")
+    text_file.write_text("དཀོན་མཆོག་གསུམ་ལ་ཕྱག་འཚལ་ལོ།", encoding="utf-8")
+
     return text_file
 
 
@@ -32,7 +33,7 @@ def test_load_fonts(fonts_dir):
 
 def test_read_text(text_file):
     text = read_text(text_file)
-    assert text == "This is a test text.\nWith multiple lines."
+    assert text == "དཀོན་མཆོག་གསུམ་ལ་ཕྱག་འཚལ་ལོ།"
 
 
 def test_create_image():
@@ -45,7 +46,7 @@ def test_justify_line(fonts_dir):
     fonts = load_fonts(fonts_dir)
     image = create_image(500, 100, "white")
     draw = ImageDraw.Draw(image)
-    x = justify_line(draw, "This is a test", fonts, 20, 500, 0, 0, 10, 10)
+    x = justify_line(draw, "དཀོན་མཆོག་གསུམ་ལ་ཕྱག་འཚལ་ལོ།", fonts, 20, 500, 0, 0, 10, 10)
     assert x > 0
 
 
