@@ -74,5 +74,5 @@ def main(fonts_dir, text_file_path, output_image_path, image_width=2400, image_h
 if __name__ == "__main__":
     fonts_dir = "fonts"
     text_file_path = "data/txt/test.txt"
-    output_image_path = "data/synt_img/derge_kangyur_3.png"
+    output_image_path = "data/synt_img/derge_kangyur_1.png"
     main(fonts_dir, text_file_path, output_image_path)
